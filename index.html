@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="js/skills.js" defer></script>
+    <title>bgsAna | Portfólio</title>
+</head>
+
+<body>
+    <nav class="navegation">
+        <ul class="menu">
+            <li>
+                <a href="#inicio">Início</a>
+            </li>
+            <li>
+                <a href="#sobre">Sobre Mim</a>
+            </li>
+            <li>
+                <a href="#habilidades">Habilidades</a>
+            </li>
+            <li>
+                <a href="#projetos">Projetos</a>
+            </li>
+            <li>
+                <a href="#contato">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="header">
+        <div class="header-content">
+            <img src="./img/foto-portfolio.png" alt="Foto de Ana Lívia" class="fotoPerfil">
+
+            <div class="texto-social">
+                <div class="texto-nome">
+                    <h1>Ana Borges</h1>
+                    <p>Desenvolvedora em formação</p>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+
+                    <a href="https://github.com/SEU-USUARIO" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-title">Sobre Mim</h2>
+        <div class="sobre-box">
+            <p class="sobre-p">
+                Sou estudante de desenvolvimento de software, com foco em aprendizado contínuo e na construção de
+                projetos práticos. Possuo experiência acadêmica em desenvolvimento web, lógica de programação,
+                front-end, back-end e banco de dados.
+
+                Atualmente, além de trabalhar como desenvolvedor freelancer, estou buscando oportunidades para aplicar
+                meus conhecimentos, interesses e dedicação. Quero aprender
+                com desafios reais e evoluir profissionalmente na área de tecnologia, pela qual sou apaixonada.
+            </p>
+        </div>
+    </section>
+
+    <section id="habilidades" class="habilidades">
+        <h2 class="habilidades-title">Habilidades</h2>
+
+        <!-- ABAS -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="hard">Hard Skills</button>
+            <button class="tab-btn" data-tab="soft">Soft Skills</button>
+        </div>
+
+        <!-- HARD SKILLS -->
+        <div class="tab-content active" id="hard">
+            <div class="hard-icons">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-brands fa-js"></i>
+                <i class="fa-brands fa-git-alt"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-solid fa-database"></i>
+            </div>
+        </div>
+
+        <!-- SOFT SKILLS -->
+        <div class="tab-content" id="soft">
+
+            <div class="skill">
+                <span>Comunicação</span>
+                <div class="barra">
+                    <div class="nivel" data-nivel="85%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <span>Trabalho em equipe</span>
+                <div class="barra">
+                    <div class="nivel" data-nivel="90%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <span>Proatividade</span>
+                <div class="barra">
+                    <div class="nivel" data-nivel="88%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <span>Aprendizado contínuo</span>
+                <div class="barra">
+                    <div class="nivel" data-nivel="95%"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-title">Meus Projetos</h2>
+        <div class="projetos-box">
+
+            <div class="projetos-card">
+                <img src="./img/PRISM-TIPOGRAFIA.png" class="projetos-img">
+                <h3 class="info-projetos">AmiguLand</h3>
+                <p class="projetos-p">pipipip</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/PRISM-TIPOGRAFIA.png" class="projetos-img">
+                <h3 class="info-projetos">AmiguLand</h3>
+                <p class="projetos-p">pipipip</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/PRISM-TIPOGRAFIA.png" class="projetos-img">
+                <h3 class="info-projetos">AmiguLand</h3>
+                <p class="projetos-p">pipipip</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2 class="contato-title">Entre em contato</h2>
+
+        <form action="" class="form-contato" id="form">
+            <div class="nome-form">
+                <input class="campo-form" placeholder="Nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="text-form" placeholder="Digite sua mensagem"></textarea>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>
