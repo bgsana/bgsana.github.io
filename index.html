@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/skills.js" defer></script>
+    <script src="script.js" defer></script>
     <title>bgsAna | Portfólio</title>
 </head>
 
@@ -18,6 +19,9 @@
             </li>
             <li>
                 <a href="#sobre">Sobre Mim</a>
+            </li>
+            <li>
+                <a href="#formacao">Formação</a>
             </li>
             <li>
                 <a href="#habilidades">Habilidades</a>
@@ -42,12 +46,12 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/ana-l%C3%ADvia-borges-da-silva-96b959350/" target="_blank"
+                        aria-label="LinkedIn">
+                        <i class="devicon-linkedin-plain"></i>
                     </a>
-
-                    <a href="https://github.com/SEU-USUARIO" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
+                    <a href="https://github.com/bgsana" target="_blank" aria-label="GitHub">
+                        <i class="devicon-github-original"></i>
                     </a>
                 </div>
             </div>
@@ -55,22 +59,45 @@
         </div>
     </main>
 
-    <section id="sobre" class="sobre">
+    <section id="sobre" class="sobre reveal">
         <h2 class="sobre-title">Sobre Mim</h2>
-        <div class="sobre-box">
-            <p class="sobre-p">
-                Sou estudante de desenvolvimento de software, com foco em aprendizado contínuo e na construção de
-                projetos práticos. Possuo experiência acadêmica em desenvolvimento web, lógica de programação,
-                front-end, back-end e banco de dados.
+        <p class="sobre-p">
+            Sou estudante de <span>desenvolvimento de software</span>, com foco em
+            <span>aprendizado contínuo</span> e na construção de projetos práticos.
+            Possuo experiência acadêmica em <span>desenvolvimento web</span>,
+            lógica de programação, front-end, back-end e banco de dados.
+            <br><br>
+            Atualmente, além de trabalhar como desenvolvedora freelancer,
+            busco oportunidades para aplicar meus conhecimentos em
+            <span>desafios reais</span> e evoluir profissionalmente na área de tecnologia.
+        </p>
+    </section>
 
-                Atualmente, além de trabalhar como desenvolvedor freelancer, estou buscando oportunidades para aplicar
-                meus conhecimentos, interesses e dedicação. Quero aprender
-                com desafios reais e evoluir profissionalmente na área de tecnologia, pela qual sou apaixonada.
-            </p>
+    <section id="formacao" class="formacao reveal">
+        <h2 class="formacao-title">Formação Acadêmica</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+                <div class="timeline-text">
+                    <h3>Ensino Médio — Itinerário Formativo em Linguagens</h3>
+                    <p class="instituicao">Etec Comendador João Rays • Barra Bonita</p>
+                    <span class="periodo">Conclusão: Dezembro / 2026</span>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-text">
+                    <h3>Curso Técnico em Desenvolvimento de Sistemas</h3>
+                    <p class="instituicao">Etec Comendador João Rays • Barra Bonita</p>
+                    <span class="periodo">Conclusão: Junho / 2026</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section id="habilidades" class="habilidades">
+    <section id="habilidades" class="habilidades reveal">
         <h2 class="habilidades-title">Habilidades</h2>
 
         <!-- ABAS -->
@@ -82,12 +109,21 @@
         <!-- HARD SKILLS -->
         <div class="tab-content active" id="hard">
             <div class="hard-icons">
-                <i class="fa-brands fa-html5"></i>
-                <i class="fa-brands fa-css3-alt"></i>
-                <i class="fa-brands fa-js"></i>
-                <i class="fa-brands fa-git-alt"></i>
-                <i class="fa-brands fa-github"></i>
-                <i class="fa-solid fa-database"></i>
+                <i class="devicon-html5-plain" title="HTML"></i>
+                <i class="devicon-css3-plain" title="CSS3"></i>
+                <i class="devicon-javascript-plain" title="JavaScript"></i>
+                <i class="devicon-bootstrap-plain" title="Bootstrap"></i>
+
+                <i class="devicon-dotnetcore-plain" title=".NET"></i>
+                <i class="devicon-csharp-plain" title="C#"></i>
+                <i class="devicon-mysql-original" title="MySQL"></i>
+                <i class="devicon-microsoftsqlserver-plain" title="SQL Server"></i>
+
+                <i class="devicon-git-plain" title="Git"></i>
+                <i class="devicon-github-original" title="GitHub"></i>
+
+                <i class="devicon-figma-plain" title="Figma"></i>
+                <i class="devicon-photoshop-plain" title="Photoshop"></i>
             </div>
         </div>
 
@@ -125,7 +161,7 @@
         </div>
     </section>
 
-    <section id="projetos" class="projetos">
+    <section id="projetos" class="projetos reveal">
         <h2 class="projetos-title">Meus Projetos</h2>
         <div class="projetos-box">
 
@@ -150,18 +186,42 @@
         </div>
     </section>
 
-    <section id="contato" class="contato">
+    <section id="contato" class="contato reveal">
         <h2 class="contato-title">Entre em contato</h2>
 
-        <form action="" class="form-contato" id="form">
-            <div class="nome-form">
-                <input class="campo-form" placeholder="Nome">
-            </div>
-            <div class="grupo-form">
-                <textarea class="text-form" placeholder="Digite sua mensagem"></textarea>
-            </div>
-        </form>
+        <p class="contato-subtitle">
+            Curtiu meu trabalho? Vamos conversar!
+        </p>
+
+        <div class="contato-links">
+            <a href="mailto:bgs.ana08@gmail.com" class="contato-card" style="--delay: 0s">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/ana-l%C3%ADvia-borges-da-silva-96b959350/" target="_blank"
+                class="contato-card" style="--delay: 0.15s">
+                <i class="devicon-linkedin-plain"></i>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://github.com/bgsana" target="_blank" class="contato-card" style="--delay: 0.3s">
+                <i class="devicon-github-original"></i>
+                <span>GitHub</span>
+            </a>
+
+            <a href="https://wa.me/5514997812974" target="_blank" class="contato-card" style="--delay: 0.45s">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+
+        <p class="contato-cta">
+            Disponível para <span>estágio</span> e <span>projetos</span>.
+        </p>
     </section>
 </body>
+
+<div class="cursor"></div>
 
 </html>
