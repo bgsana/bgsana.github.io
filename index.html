@@ -1,227 +1,298 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="script.js" defer></script>
-    <title>bgsAna | Portfólio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="script.js" defer></script>
+  <title>bgsana | Portfólio
+  </title>
 </head>
-
 <body>
-    <nav class="navegation">
-        <ul class="menu">
-            <li>
-                <a href="#inicio">Início</a>
-            </li>
-            <li>
-                <a href="#sobre">Sobre Mim</a>
-            </li>
-            <li>
-                <a href="#formacao">Formação</a>
-            </li>
-            <li>
-                <a href="#habilidades">Habilidades</a>
-            </li>
-            <li>
-                <a href="#projetos">Projetos</a>
-            </li>
-            <li>
-                <a href="#contato">Contato</a>
-            </li>
-        </ul>
-    </nav>
 
-    <main id="inicio" class="header">
-        <div class="header-content">
-            <img src="./img/foto-portfolio.png" alt="Foto de Ana Lívia" class="fotoPerfil">
+  <!-- NAV -->
+  <nav class="navegation">
+    <a href="#inicio" class="nav-logo">bgs.ana</a>
+    <ul class="menu">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
 
-            <div class="texto-social">
-                <div class="texto-nome">
-                    <h1>Ana Borges</h1>
-                    <p>Desenvolvedora em formação</p>
-                </div>
+  <!-- HERO -->
+  <main id="inicio" class="header">
+    <div class="header-content">
 
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/ana-l%C3%ADvia-borges-da-silva-96b959350/" target="_blank"
-                        aria-label="LinkedIn">
-                        <i class="devicon-linkedin-plain"></i>
-                    </a>
-                    <a href="https://github.com/bgsana" target="_blank" aria-label="GitHub">
-                        <i class="devicon-github-original"></i>
-                    </a>
-                </div>
-            </div>
-
+      <!-- Foto -->
+      <div class="foto-wrapper">
+        <div class="foto-frame">
+          <img src="./img/foto-portfolio.png" alt="Foto de Ana Lívia" class="fotoPerfil">
+          <span class="foto-badge">✦ Disponível para estágio</span>
         </div>
-    </main>
+      </div>
 
-    <section id="sobre" class="sobre reveal">
-        <h2 class="sobre-title">Sobre Mim</h2>
-        <p class="sobre-p">
-            Sou estudante de <span>desenvolvimento de software</span>, com foco em
-            <span>aprendizado contínuo</span> e na construção de projetos práticos.
-            Possuo experiência acadêmica em <span>desenvolvimento web</span>,
-            lógica de programação, front-end, back-end e banco de dados.
-            <br><br>
-            Atualmente, além de trabalhar como desenvolvedora freelancer,
-            busco oportunidades para aplicar meus conhecimentos em
-            <span>desafios reais</span> e evoluir profissionalmente na área de tecnologia.
+      <!-- Texto -->
+      <div class="hero-text">
+        <span class="hero-tag">Dev em formação</span>
+        <h1 class="hero-title">
+          Ana
+          <em>Borges</em>
+        </h1>
+        <p class="hero-sub">
+          Estudante de desenvolvimento de sistemas apaixonada por desenvolver.
         </p>
-    </section>
-
-    <section id="formacao" class="formacao reveal">
-        <h2 class="formacao-title">Formação Acadêmica</h2>
-
-        <div class="timeline">
-
-            <div class="timeline-item reveal">
-                <div class="timeline-text">
-                    <h3>Ensino Médio — Itinerário Formativo em Linguagens</h3>
-                    <p class="instituicao">Etec Comendador João Rays • Barra Bonita</p>
-                    <span class="periodo">Conclusão: Dezembro / 2026</span>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-text">
-                    <h3>Curso Técnico em Desenvolvimento de Sistemas</h3>
-                    <p class="instituicao">Etec Comendador João Rays • Barra Bonita</p>
-                    <span class="periodo">Conclusão: Junho / 2026</span>
-                </div>
-            </div>
-
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/ana-l%C3%ADvia-borges-da-silva-96b959350/" target="_blank" aria-label="LinkedIn">
+            <i class="devicon-linkedin-plain"></i>
+          </a>
+          <a href="https://github.com/bgsana" target="_blank" aria-label="GitHub">
+            <i class="devicon-github-original"></i>
+          </a>
+          <a href="mailto:bgs.ana08@gmail.com" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
         </div>
-    </section>
+      </div>
 
-    <section id="habilidades" class="habilidades reveal">
-        <h2 class="habilidades-title">Habilidades</h2>
+    </div>
 
-        <!-- ABAS -->
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="hard">Hard Skills</button>
-            <button class="tab-btn" data-tab="soft">Soft Skills</button>
+    <div class="scroll-hint">scroll</div>
+  </main>
+
+  <div class="section-divider"></div>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="sobre reveal">
+    <div class="sobre-left">
+      <span class="section-label">Quem sou</span>
+      <h2>Sobre<br>Mim</h2>
+    </div>
+
+    <div class="sobre-right">
+      <p class="sobre-p">
+        Sou estudante de <span>desenvolvimento de software</span>, com foco em
+        <span>aprendizado contínuo</span> e na construção de projetos práticos.
+        Possuo experiência acadêmica em <span>desenvolvimento web</span>,
+        lógica de programação, front-end, back-end e banco de dados.
+      </p>
+      <p class="sobre-p">
+        Atualmente, além de trabalhar como desenvolvedora freelancer,
+        busco oportunidades para aplicar meus conhecimentos em
+        <span>desafios reais</span> e evoluir profissionalmente na área de tecnologia.
+      </p>
+
+      <div class="sobre-stats">
+        <div class="stat">
+          <span class="stat-num">2+</span>
+          <span class="stat-label">Anos de estudo</span>
         </div>
-
-        <!-- HARD SKILLS -->
-        <div class="tab-content active" id="hard">
-            <div class="hard-icons">
-                <i class="devicon-html5-plain" title="HTML"></i>
-                <i class="devicon-css3-plain" title="CSS3"></i>
-                <i class="devicon-javascript-plain" title="JavaScript"></i>
-                <i class="devicon-bootstrap-plain" title="Bootstrap"></i>
-
-                <i class="devicon-dotnetcore-plain" title=".NET"></i>
-                <i class="devicon-csharp-plain" title="C#"></i>
-                <i class="devicon-mysql-original" title="MySQL"></i>
-                <i class="devicon-microsoftsqlserver-plain" title="SQL Server"></i>
-
-                <i class="devicon-git-plain" title="Git"></i>
-                <i class="devicon-github-original" title="GitHub"></i>
-
-                <i class="devicon-figma-plain" title="Figma"></i>
-                <i class="devicon-photoshop-plain" title="Photoshop"></i>
-            </div>
+        <div class="stat">
+          <span class="stat-num">12+</span>
+          <span class="stat-label">Tecnologias</span>
         </div>
-
-        <!-- SOFT SKILLS -->
-        <div class="tab-content" id="soft">
-
-            <div class="skill">
-                <span>Comunicação</span>
-                <div class="barra">
-                    <div class="nivel" data-nivel="85%"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <span>Trabalho em equipe</span>
-                <div class="barra">
-                    <div class="nivel" data-nivel="90%"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <span>Proatividade</span>
-                <div class="barra">
-                    <div class="nivel" data-nivel="88%"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <span>Aprendizado contínuo</span>
-                <div class="barra">
-                    <div class="nivel" data-nivel="95%"></div>
-                </div>
-            </div>
-
+        <div class="stat">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Curiosidade</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="projetos" class="projetos reveal">
-        <h2 class="projetos-title">Meus Projetos</h2>
-        <div class="projetos-box">
+  <div class="section-divider"></div>
 
-            <div class="projetos-card">
-                <img src="./img/PRISM-TIPOGRAFIA.png" class="projetos-img">
-                <h3 class="info-projetos">AmiguLand</h3>
-                <p class="projetos-p">pipipip</p>
-            </div>
+  <!-- FORMAÇÃO -->
+  <section id="formacao" class="formacao reveal">
+    <span class="section-label">Trajetória</span>
+    <h2>Formação<br>Acadêmica</h2>
 
-            <div class="projetos-card">
-                <img src="./img/PRISM-TIPOGRAFIA.png" class="projetos-img">
-                <h3 class="info-projetos">AmiguLand</h3>
-                <p class="projetos-p">pipipip</p>
-            </div>
+    <div class="formacao-inner">
+      <div class="timeline">
 
-            <div class="projetos-card">
-                <img src="./img/PRISM-TIPOGRAFIA.png" class="projetos-img">
-                <h3 class="info-projetos">AmiguLand</h3>
-                <p class="projetos-p">pipipip</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contato" class="contato reveal">
-        <h2 class="contato-title">Entre em contato</h2>
-
-        <p class="contato-subtitle">
-            Curtiu meu trabalho? Vamos conversar!
-        </p>
-
-        <div class="contato-links">
-            <a href="mailto:bgs.ana08@gmail.com" class="contato-card" style="--delay: 0s">
-                <i class="fa-solid fa-envelope"></i>
-                <span>Email</span>
-            </a>
-
-            <a href="https://www.linkedin.com/in/ana-l%C3%ADvia-borges-da-silva-96b959350/" target="_blank"
-                class="contato-card" style="--delay: 0.15s">
-                <i class="devicon-linkedin-plain"></i>
-                <span>LinkedIn</span>
-            </a>
-
-            <a href="https://github.com/bgsana" target="_blank" class="contato-card" style="--delay: 0.3s">
-                <i class="devicon-github-original"></i>
-                <span>GitHub</span>
-            </a>
-
-            <a href="https://wa.me/5514997812974" target="_blank" class="contato-card" style="--delay: 0.45s">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>WhatsApp</span>
-            </a>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">Jun<br>2026</div>
+          <div class="timeline-text">
+            <h3>Técnico em Desenvolvimento de Sistemas</h3>
+            <p class="instituicao">Etec Comendador João Rays · Barra Bonita</p>
+          </div>
         </div>
 
-        <p class="contato-cta">
-            Disponível para <span>estágio</span> e <span>projetos</span>.
-        </p>
-    </section>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">Dez<br>2026</div>
+          <div class="timeline-text">
+            <h3>Ensino Médio — Itinerário em Linguagens</h3>
+            <p class="instituicao">Etec Comendador João Rays · Barra Bonita</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades" class="habilidades reveal">
+    <span class="section-label">Competências</span>
+    <h2>Habilidades</h2>
+
+    <div class="habilidades-inner">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="hard">Hard Skills</button>
+        <button class="tab-btn" data-tab="soft">Soft Skills</button>
+      </div>
+
+      <!-- HARD SKILLS -->
+      <div class="tab-content active" id="hard">
+        <div class="hard-icons">
+          <div class="skill-icon-card"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+          <div class="skill-icon-card"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+          <div class="skill-icon-card"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="skill-icon-card"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+          <div class="skill-icon-card"><i class="devicon-dotnetcore-plain colored"></i><span>.NET</span></div>
+          <div class="skill-icon-card"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
+          <div class="skill-icon-card"><i class="devicon-mysql-original colored"></i><span>MySQL</span></div>
+          <div class="skill-icon-card"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></div>
+          <div class="skill-icon-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+          <div class="skill-icon-card"><i class="devicon-github-original"></i><span>GitHub</span></div>
+          <div class="skill-icon-card"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+          <div class="skill-icon-card"><i class="devicon-photoshop-plain colored"></i><span>Photoshop</span></div>
+        </div>
+      </div>
+
+      <!-- SOFT SKILLS -->
+      <div class="tab-content" id="soft">
+        <div class="soft-grid">
+
+          <div class="skill">
+            <div class="skill-header">
+              <span>Comunicação</span>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="barra"><div class="nivel" data-nivel="85%"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <span>Trabalho em equipe</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="barra"><div class="nivel" data-nivel="90%"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <span>Proatividade</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="barra"><div class="nivel" data-nivel="88%"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <span>Aprendizado contínuo</span>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="barra"><div class="nivel" data-nivel="95%"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- PROJETOS -->
+  <section id="projetos" class="projetos reveal">
+    <span class="section-label">Trabalhos</span>
+    <h2>Meus<br>Projetos</h2>
+
+    <div class="projetos-inner">
+      <div class="projetos-box">
+
+        <div class="projetos-card">
+          <div class="projetos-img-wrap">
+            <img src="./img/PRISM-TIPOGRAFIA.png" class="projetos-img" alt="AmiguLand">
+            <div class="projeto-overlay"></div>
+          </div>
+          <div class="projetos-body">
+            <h3 class="info-projetos">AmiguLand</h3>
+            <p class="projetos-p">Projeto em desenvolvimento — descrição em breve.</p>
+            <a href="#" class="projeto-link">Ver projeto →</a>
+          </div>
+        </div>
+
+        <div class="projetos-card">
+          <div class="projetos-img-wrap">
+            <img src="./img/PRISM-TIPOGRAFIA.png" class="projetos-img" alt="Projeto 2">
+            <div class="projeto-overlay"></div>
+          </div>
+          <div class="projetos-body">
+            <h3 class="info-projetos">Projeto 2</h3>
+            <p class="projetos-p">Projeto em desenvolvimento — descrição em breve.</p>
+            <a href="#" class="projeto-link">Ver projeto →</a>
+          </div>
+        </div>
+
+        <div class="projetos-card">
+          <div class="projetos-img-wrap">
+            <img src="./img/PRISM-TIPOGRAFIA.png" class="projetos-img" alt="Projeto 3">
+            <div class="projeto-overlay"></div>
+          </div>
+          <div class="projetos-body">
+            <h3 class="info-projetos">Projeto 3</h3>
+            <p class="projetos-p">Projeto em desenvolvimento — descrição em breve.</p>
+            <a href="#" class="projeto-link">Ver projeto →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CONTATO -->
+  <section id="contato" class="contato reveal">
+    <span class="section-label">Vamos conversar</span>
+    <h2>Entre em<br>Contato</h2>
+
+    <div class="contato-inner">
+      <p class="contato-subtitle">Curtiu meu trabalho? Fico feliz em receber uma mensagem!</p>
+
+      <div class="contato-links">
+        <a href="mailto:bgs.ana08@gmail.com" class="contato-card" style="--delay:0s">
+          <i class="fa-solid fa-envelope"></i>
+          <span>bgs.ana08@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/ana-l%C3%ADvia-borges-da-silva-96b959350/" target="_blank" class="contato-card" style="--delay:0.1s">
+          <i class="devicon-linkedin-plain"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/bgsana" target="_blank" class="contato-card" style="--delay:0.2s">
+          <i class="devicon-github-original"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="https://wa.me/5514997812974" target="_blank" class="contato-card" style="--delay:0.3s">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+
+      <p class="contato-cta">
+        Disponível para <span>estágio</span> e <span>projetos freelance</span>.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Ana Borges · Feito com amor</span>
+  </footer>
+
 </body>
-
-<div class="cursor"></div>
-
 </html>

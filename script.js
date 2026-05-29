@@ -3,54 +3,52 @@ const contents = document.querySelectorAll('.tab-content');
 const niveis = document.querySelectorAll('.nivel');
 
 buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    contents.forEach(c => c.classList.remove('active'));
+    const tab = document.getElementById(btn.dataset.tab);
+    tab.classList.add('active');
 
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        contents.forEach(c => c.classList.remove('active'));
-        const tab = document.getElementById(btn.dataset.tab);
-        tab.classList.add('active');
-
-        if (btn.dataset.tab === 'soft') {
-            niveis.forEach(nivel => {
-                nivel.style.width = nivel.dataset.nivel;
-            });
-        } else {
-            niveis.forEach(nivel => {
-                nivel.style.width = '0';
-            });
-        }
-    });
+    if (btn.dataset.tab === 'soft') {
+      setTimeout(() => {
+        niveis.forEach(n => { n.style.width = n.dataset.nivel; });
+      }, 50);
+    } else {
+      niveis.forEach(n => { n.style.width = '0'; });
+    }
+  });
 });
-
-const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                observer.unobserve(entry.target);
-            }
-        });
-    },
-    {
-        threshold: 0.15
-    }
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
 );
-reveals.forEach(reveal => observer.observe(reveal));
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const progress = scrollY / docHeight;
-
-    const g1 = 20 + progress * 60;
-    const g2 = 10 + progress * 70;
-    const g3 = 80 + progress * 40;
-
-    document.body.style.setProperty("--g1", `${g1}%`);
-    document.body.style.setProperty("--g2", `${g2}%`);
-    document.body.style.setProperty("--g3", `${g3}%`);
+const nav = document.querySelector('.navegation');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
 });
+
+const sections = document.querySelectorAll('section[id], main[id]');
+const navLinks = document.querySelectorAll('.menu a');
+
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+      });
+    }
+  });
+}, { threshold: 0.4 });
+
+sections.forEach(s => sectionObserver.observe(s));
