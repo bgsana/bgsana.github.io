@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="assets/Royal_Delight.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -13,57 +14,42 @@
 
   <!-- NAV -->
   <nav class="navegation">
-    <a href="#inicio" class="nav-logo">Bgs.Ana</a>
-    <ul class="menu">
+    <a href="#inicio" class="nav-logo" aria-label="Voltar ao início">✦ BGS.ANA</a>
+    <ul class="menu" id="menu">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#formacao">Formação</a></li>
       <li><a href="#habilidades">Habilidades</a></li>
       <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#prototipos">Protótipos</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
+    <button class="menu-trigger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><i class="fa-solid fa-bars"></i></button>
   </nav>
 
   <!-- HERO -->
   <main id="inicio" class="header">
-    <div class="header-content">
+    <div class="hero-stage">
 
-      <!-- Foto -->
-      <div class="foto-wrapper">
-        <div class="foto-frame">
-          <img src="./img/foto-portfolio.png" alt="Foto de Ana Lívia" class="fotoPerfil">
-          <span class="foto-badge">✦ Disponível</span>
-        </div>
-      </div>
-
-      <!-- Texto -->
-      <div class="hero-text">
-        <span class="hero-tag">Técnica em Desenvolvimento de Sistemas</span>
-        <h1 class="hero-title">
-          Ana
-          <em>Borges</em>
-        </h1>
-        <p class="hero-sub">
-          Desenvolvedora full stack apaixonada por transformar ideias em soluções.
-        </p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/ana-l%C3%ADvia-borges-da-silva-96b959350/" target="_blank" aria-label="LinkedIn">
-            <i class="devicon-linkedin-plain"></i>
-          </a>
-          <a href="https://github.com/bgsana" target="_blank" aria-label="GitHub">
-            <i class="devicon-github-original"></i>
-          </a>
-          <a href="mailto:bgs.ana08@gmail.com" aria-label="Email">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-
+      <h1 class="hero-mega" aria-label="Ana Borges">
+        <span class="hero-name-line">ANA</span>
+        <span class="hero-name-line hero-name-line-2">BORGES</span>
+      </h1>
     </div>
 
-    <div class="scroll-hint">scroll</div>
+    <div class="hero-footer">
+      <span class="hero-tag">Técnica em Desenvolvimento de Sistemas</span>
+      <p class="hero-sub">Desenvolvedora em formação contínua, atualmente estudando UX/UI.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/ana-l%C3%ADvia-borges-da-silva-96b959350/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="devicon-linkedin-plain"></i></a>
+        <a href="https://github.com/bgsana" target="_blank" rel="noopener" aria-label="GitHub"><i class="devicon-github-original"></i></a>
+        <a href="mailto:bgs.ana08@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
   </main>
 
-  <div class="section-divider"></div>
+  <div class="word-strip" aria-hidden="true">
+    <div class="word-track"><span>DESENVOLVIMENTO ✦ UX/UI ✦ FRONT-END ✦ BACK-END ✦ DESENVOLVIMENTO ✦ UX/UI ✦ FRONT-END ✦ BACK-END ✦ DESENVOLVIMENTO ✦ UX/UI ✦ FRONT-END ✦ BACK-END ✦ </span><span>DESENVOLVIMENTO ✦ UX/UI ✦ FRONT-END ✦ BACK-END ✦ DESENVOLVIMENTO ✦ UX/UI ✦ FRONT-END ✦ BACK-END ✦ DESENVOLVIMENTO ✦ UX/UI ✦ FRONT-END ✦ BACK-END ✦ </span></div>
+  </div>
 
   <!-- SOBRE -->
   <section id="sobre" class="sobre reveal">
@@ -90,16 +76,18 @@
 
   <!-- FORMAÇÃO -->
   <section id="formacao" class="formacao reveal">
-    <h2>Formação<br><em>Acadêmica</em></h2>
+    <h2><em>Minha</em> Formação</h2>
 
     <div class="formacao-inner">
       <div class="timeline">
+        <div class="timeline-progress" aria-hidden="true"></div>
 
         <div class="timeline-item reveal">
           <div class="timeline-year">Jun<br>2026</div>
           <div class="timeline-text">
             <h3>Técnico em Desenvolvimento de Sistemas</h3>
             <p class="instituicao">Etec Comendador João Rays · Barra Bonita</p>
+            <span class="status">Concluído</span>
           </div>
         </div>
 
@@ -108,6 +96,7 @@
           <div class="timeline-text">
             <h3>Ensino Médio — Itinerário em Linguagens</h3>
             <p class="instituicao">Etec Comendador João Rays · Barra Bonita</p>
+            <span class="status">Em andamento</span>
           </div>
         </div>
 
@@ -119,7 +108,7 @@
 
   <!-- HABILIDADES -->
   <section id="habilidades" class="habilidades reveal">
-    <h2>Habilidades</h2>
+    <h2><em>Habilidades</em></h2>
 
     <div class="habilidades-inner">
       <div class="tabs">
@@ -129,19 +118,40 @@
 
       <!-- HARD SKILLS -->
       <div class="tab-content active" id="hard">
-        <div class="hard-icons">
-          <div class="skill-icon-card"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
-          <div class="skill-icon-card"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
-          <div class="skill-icon-card"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
-          <div class="skill-icon-card"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
-          <div class="skill-icon-card"><i class="devicon-dotnetcore-plain colored"></i><span>.NET</span></div>
-          <div class="skill-icon-card"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
-          <div class="skill-icon-card"><i class="devicon-mysql-original colored"></i><span>MySQL</span></div>
-          <div class="skill-icon-card"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></div>
-          <div class="skill-icon-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-          <div class="skill-icon-card"><i class="devicon-github-original"></i><span>GitHub</span></div>
-          <div class="skill-icon-card"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
-          <div class="skill-icon-card"><i class="devicon-photoshop-plain colored"></i><span>Photoshop</span></div>
+        <div class="marquee-row">
+          <div class="marquee-track">
+            <div class="skill-icon-card"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+            <div class="skill-icon-card"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+            <div class="skill-icon-card"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+            <div class="skill-icon-card"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+            <div class="skill-icon-card"><i class="devicon-dotnetcore-plain colored"></i><span>.NET</span></div>
+            <div class="skill-icon-card"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
+            <!-- duplicado para loop contínuo -->
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-dotnetcore-plain colored"></i><span>.NET</span></div>
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
+          </div>
+        </div>
+
+        <div class="marquee-row marquee-reverse">
+          <div class="marquee-track">
+            <div class="skill-icon-card"><i class="devicon-mysql-original colored"></i><span>MySQL</span></div>
+            <div class="skill-icon-card"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></div>
+            <div class="skill-icon-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+            <div class="skill-icon-card"><i class="devicon-github-original"></i><span>GitHub</span></div>
+            <div class="skill-icon-card"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+            <div class="skill-icon-card"><i class="devicon-photoshop-plain colored"></i><span>Photoshop</span></div>
+            <!-- duplicado para loop contínuo -->
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-mysql-original colored"></i><span>MySQL</span></div>
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></div>
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-github-original"></i><span>GitHub</span></div>
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+            <div class="skill-icon-card" aria-hidden="true"><i class="devicon-photoshop-plain colored"></i><span>Photoshop</span></div>
+          </div>
         </div>
       </div>
 
@@ -190,57 +200,63 @@
 
   <!-- PROJETOS -->
   <section id="projetos" class="projetos reveal">
-    <h2>Meus<br><em>Projetos</em></h2>
+    <div class="section-heading-row">
+      <div>
+        <span class="section-label">SELECTED WORK / 2026</span>
+        <h2>Meus<br><em>projetos</em></h2>
+      </div>
+      <p class="section-intro">Uma seleção de projetos acadêmicos e pessoais que mostram como transformo ideias em interfaces, sistemas e experiências digitais.</p>
+    </div>
 
     <div class="projetos-inner">
       <div class="projetos-box">
 
-        <div class="projetos-card">
-          <div class="projetos-img-wrap">
-            <img src="./img/bloguei.png" class="projetos-img" alt="Bloguei">
-            <div class="projeto-overlay"></div>
-          </div>
+        <article class="projetos-card project-bloguei jelly-card" data-project="01">
+          <div class="project-number">01</div>
+          <div class="projetos-img-wrap"><img src="./img/bloguei.png" class="projetos-img" alt="Interface do projeto Bloguei"><div class="projeto-overlay"></div></div>
           <div class="projetos-body">
+            <span class="project-type">WEB / MVC</span>
             <h3 class="info-projetos">Bloguei</h3>
-            <p class="projetos-p">Projeto de aplicação WEB padrão MVC.NET9, para estudo de orientação a objetos</p>
-            <a href="https://github.com/bgsana/blog-mvc" class="projeto-link">Ver projeto →</a>
+            <div class="projetos-details"><p class="projetos-p">Aplicação web em .NET MVC criada para praticar orientação a objetos e construção de interfaces dinâmicas.</p><a href="https://github.com/bgsana/blog-mvc" target="_blank" rel="noopener" class="projeto-link">Ver projeto <span>↗</span></a></div>
           </div>
-        </div>
+          <span class="project-arrow">↗</span>
+        </article>
 
-        <div class="projetos-card">
-          <div class="projetos-img-wrap">
-            <img src="./img/pokedex.png" class="projetos-img" alt="Pokedéx">
-            <div class="projeto-overlay"></div>
-          </div>
+        <article class="projetos-card project-pokedex jelly-card" data-project="02">
+          <div class="project-number">02</div>
+          <div class="projetos-img-wrap"><img src="./img/pokedex.png" class="projetos-img" alt="Interface do projeto Pokedéx"><div class="projeto-overlay"></div></div>
           <div class="projetos-body">
+            <span class="project-type">.NET / MYSQL</span>
             <h3 class="info-projetos">Pokedéx</h3>
-            <p class="projetos-p">Projeto desenvolvido para demonstrar a criação de páginas WEB com .Net 9. Demonstrar a criação de aplicações com padrão MVC e persistência de dados em Banco MySQL, além de boas práticas de Programação Orientada a Objetos e Páginas Dinâmicas.</p>
-            <a href="https://github.com/bgsana/Pokedex" class="projeto-link">Ver projeto →</a>
-          </div>
-        </div>
+            <div class="projetos-details"><p class="projetos-p">Projeto MVC com persistência de dados, páginas dinâmicas e práticas de programação orientada a objetos.</p><a href="https://github.com/bgsana/Pokedex" target="_blank" rel="noopener" class="projeto-link">Ver projeto <span>↗</span></a></div></div>
+          <span class="project-arrow">↗</span>
+        </article>
 
-        <div class="projetos-card">
-          <div class="projetos-img-wrap">
-            <img src="./img/gcook.png" class="projetos-img" alt="GCook">
-            <div class="projeto-overlay"></div>
-          </div>
+        <article class="projetos-card project-amiguland jelly-card" data-project="03">
+          <div class="project-number">03</div>
+          <div class="projetos-img-wrap"><img src="./img/amiguland.png" class="projetos-img" alt="Interface do projeto AmiguLand"><div class="projeto-overlay"></div></div>
           <div class="projetos-body">
-            <h3 class="info-projetos">GCook</h3>
-            <p class="projetos-p">Projeto de aplicação web .NET 9 MVC code-first, com banco MySQL, para gerenciamento de receitas culinárias</p>
-            <a href="https://github.com/bgsana/GCook" class="projeto-link">Ver projeto →</a>
-          </div>
-        </div>
-
-        <div class="projetos-card">
-          <div class="projetos-img-wrap">
-            <img src="./img/amiguland.png" class="projetos-img" alt="AmiguLand">
-            <div class="projeto-overlay"></div>
-          </div>
-          <div class="projetos-body">
+            <span class="project-type">API / E-COMMERCE</span>
             <h3 class="info-projetos">AmiguLand</h3>
-            <p class="projetos-p">API de E-commerce desenvolvida para o Projeto Interdisciplinar do 2º Módulo de Desenvolvimento de Sistemas</p>
-            <a href="https://github.com/bgsana/AmiguLand" class="projeto-link">Ver projeto →</a>
-          </div>
+            <div class="projetos-details"><p class="projetos-p">API de e-commerce desenvolvida no projeto interdisciplinar do 2º módulo de Desenvolvimento de Sistemas.</p><a href="https://github.com/bgsana/AmiguLand" target="_blank" rel="noopener" class="projeto-link">Ver projeto <span>↗</span></a></div></div>
+          <span class="project-arrow">↗</span>
+        </article>
+
+        <article class="projetos-card project-gcook jelly-card" data-project="04">
+          <div class="project-number">04</div>
+          <div class="projetos-img-wrap"><img src="./img/gcook.png" class="projetos-img" alt="Interface do projeto GCook"><div class="projeto-overlay"></div></div>
+          <div class="projetos-body">
+            <span class="project-type">FULL STACK / MVC</span>
+            <h3 class="info-projetos">GCook</h3>
+            <div class="projetos-details"><p class="projetos-p">Aplicação .NET MVC code-first com MySQL para gerenciamento de receitas culinárias.</p><a href="https://github.com/bgsana/GCook" target="_blank" rel="noopener" class="projeto-link">Ver projeto <span>↗</span></a></div></div>
+          <span class="project-arrow">↗</span>
+        </article>
+
+        <div class="project-cta jelly-card">
+          <span class="section-label">NEXT /</span>
+          <h3>Mais projetos,<br><em>mais ideias.</em></h3>
+          <p>Veja outros experimentos, estudos e projetos em desenvolvimento.</p>
+          <a href="https://github.com/bgsana" target="_blank" rel="noopener" class="cta-round">↗</a>
         </div>
 
       </div>
@@ -249,30 +265,52 @@
 
   <div class="section-divider"></div>
 
+  <!-- PROTÓTIPOS -->
+  <section id="prototipos" class="prototipos reveal">
+    <div class="section-heading-row">
+      <div>
+        <span class="section-label">UX / UI / 2026</span>
+        <h2>Ideias que<br><em>viraram interface.</em></h2>
+      </div>
+      <p class="section-intro">Protótipos e estudos de interface: da pesquisa ao fluxo navegável.</p>
+    </div>
+
+    <div class="proto-track" tabindex="0" aria-label="Protótipos, role horizontalmente">
+      <article class="proto-card jelly-card">
+        <div class="proto-frame"><img src="./img/caco-cursos.webp" alt="Protótipo da home da plataforma de cursos Caco Amigurumi" loading="lazy"></div>
+        <div class="proto-body">
+          <span class="project-type">PLATAFORMA / FIGMA</span>
+          <h3 class="info-projetos">Caco Cursos</h3>
+          <p class="projetos-p">Protótipo da área de alunos de uma plataforma de cursos de amigurumi: acesso rápido aos cursos, playlist para iniciantes, loja e contato.</p>
+          <a href="https://www.figma.com/design/dBPx8M9hz8LIleN23IXJpP/CACO-CURSOS?node-id=22-64" target="_blank" rel="noopener" class="projeto-link">Abrir no Figma <span>↗</span></a>
+        </div>
+      </article>
+
+      <article class="proto-card jelly-card">
+        <div class="proto-frame"><img src="./img/vereda.webp" alt="Protótipo da home do site da Vereda Cafeteria" loading="lazy"></div>
+        <div class="proto-body">
+          <span class="project-type">SITE INSTITUCIONAL / FIGMA</span>
+          <h3 class="info-projetos">Vereda Cafeteria</h3>
+          <p class="projetos-p">Protótipo do site da cafeteria: identidade acolhedora, seções de história, ambiente, cardápio e loja, com navegação centrada na marca.</p>
+          <a href="https://www.figma.com/design/WKSYY8cy27sqjKEuDA2tPi/VEREDA?node-id=1-3" target="_blank" rel="noopener" class="projeto-link">Abrir no Figma <span>↗</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- CONTATO -->
   <section id="contato" class="contato reveal">
-    <h2>Entre em<br><em>Contato</em></h2>
-
-    <div class="contato-inner">
-      <p class="contato-subtitle">Curtiu meu trabalho? Fico feliz em receber uma mensagem!</p>
-
+    <div class="contact-shell">
+      <div class="contact-copy">
+        <span class="section-label">LET'S CONNECT</span>
+        <h2>Tem uma ideia?<br><em>Vamos criar.</em></h2>
+        <p>Se você procura alguém que goste de aprender, construir e pensar nos detalhes, me chama.</p>
+      </div>
       <div class="contato-links">
-        <a href="mailto:bgs.ana08@gmail.com" class="contato-card" style="--delay:0s">
-          <i class="fa-solid fa-envelope"></i>
-          <span>bgs.ana08@gmail.com</span>
-        </a>
-        <a href="https://www.linkedin.com/in/ana-l%C3%ADvia-borges-da-silva-96b959350/" target="_blank" class="contato-card" style="--delay:0.1s">
-          <i class="devicon-linkedin-plain"></i>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://github.com/bgsana" target="_blank" class="contato-card" style="--delay:0.2s">
-          <i class="devicon-github-original"></i>
-          <span>GitHub</span>
-        </a>
-        <a href="https://wa.me/5514997812974" target="_blank" class="contato-card" style="--delay:0.3s">
-          <i class="fa-brands fa-whatsapp"></i>
-          <span>WhatsApp</span>
-        </a>
+        <a href="mailto:bgs.ana08@gmail.com" class="contato-card jelly-card"><i class="fa-solid fa-envelope"></i><span>E-mail</span><b>↗</b></a>
+        <a href="https://www.linkedin.com/in/ana-l%C3%ADvia-borges-da-silva-96b959350/" target="_blank" rel="noopener" class="contato-card jelly-card"><i class="devicon-linkedin-plain"></i><span>LinkedIn</span><b>↗</b></a>
+        <a href="https://github.com/bgsana" target="_blank" rel="noopener" class="contato-card jelly-card"><i class="devicon-github-original"></i><span>GitHub</span><b>↗</b></a>
+        <a href="https://wa.me/5514997812974" target="_blank" rel="noopener" class="contato-card jelly-card"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span><b>↗</b></a>
       </div>
     </div>
   </section>
