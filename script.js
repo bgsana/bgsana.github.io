@@ -1,17 +1,15 @@
-const buttons = document.querySelectorAll('.tab-btn');
-const contents = document.querySelectorAll('.tab-content');
-const niveis = document.querySelectorAll('.nivel');
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    contents.forEach(c => c.classList.remove('active'));
-    document.getElementById(btn.dataset.tab)?.classList.add('active');
-    if (btn.dataset.tab === 'soft') {
-      setTimeout(() => niveis.forEach(n => n.style.width = n.dataset.nivel), 40);
-    } else niveis.forEach(n => n.style.width = '0');
-  });
+// Abas: cada grupo (.tabs) controla só o seu próprio conteúdo
+document.querySelectorAll('.tabs').forEach(tabs => {
+  const scope = tabs.parentElement;
+  const btns = tabs.querySelectorAll('.tab-btn');
+  btns.forEach(btn => btn.addEventListener('click', () => {
+    btns.forEach(b => b.classList.toggle('active', b === btn));
+    scope.querySelectorAll(':scope > .tab-content')
+      .forEach(c => c.classList.toggle('active', c.id === btn.dataset.tab));
+    const bars = scope.querySelectorAll('.nivel');
+    if (btn.dataset.tab === 'soft') setTimeout(() => bars.forEach(n => n.style.width = n.dataset.nivel), 40);
+    else bars.forEach(n => n.style.width = '0');
+  }));
 });
 
 const observer = new IntersectionObserver(entries => {
@@ -168,29 +166,6 @@ if (heroTitle) {
     requestAnimationFrame(loop);
   }
 }
-
-// ---------- Transição "cortina" ao navegar entre seções ----------
-const curtain = document.createElement('div');
-curtain.className = 'page-curtain';
-document.body.append(curtain);
-let curtainBusy = false;
-const curtainEase = 'cubic-bezier(.76,0,.24,1)';
-
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', async e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (!target || curtainBusy || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    e.preventDefault();
-    curtainBusy = true;
-    await curtain.animate([{ transform: 'translateY(100%)' }, { transform: 'translateY(0)' }], { duration: 450, easing: curtainEase, fill: 'forwards' }).finished;
-    document.documentElement.style.scrollBehavior = 'auto';
-    target.scrollIntoView();
-    document.documentElement.style.scrollBehavior = '';
-    await curtain.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-100%)' }], { duration: 450, easing: curtainEase, fill: 'forwards' }).finished;
-    curtain.getAnimations().forEach(an => an.cancel());
-    curtainBusy = false;
-  });
-});
 
 // ---------- Linha do tempo: progresso acompanha a rolagem ----------
 const timeline = document.querySelector('.timeline');

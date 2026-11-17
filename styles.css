@@ -365,7 +365,7 @@ button {
 
 .hero-name-line {
   display: block;
-  font-size: 220px;
+  font-size: 10px;
   text-align: center;
 }
 
@@ -387,33 +387,6 @@ button {
 /* ========================================
    INFORMAÇÕES LATERAIS
 ======================================== */
-
-.hero-side-note {
-  position: absolute;
-
-  right: 0;
-  bottom: 13%;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-end;
-
-  gap: 2px;
-
-  font: 600 0.75rem/1.4 var(--sans);
-
-  letter-spacing: 0.12em;
-
-  color: var(--muted);
-}
-
-.hero-side-note strong {
-  font-weight: 500;
-
-  color: var(--text);
-}
 
 .hero-index {
   position: absolute;
@@ -503,15 +476,6 @@ button {
 /* ========================================
    SEÇÕES GERAIS
 ======================================== */
-
-.section-divider {
-  width: 90%;
-  height: 1px;
-
-  margin: auto;
-
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
-}
 
 section {
   width: min(1500px, 90%);
@@ -648,8 +612,7 @@ h2 em {
 
   grid-template-columns:
     130px
-    1fr
-    auto;
+    1fr;
 
   gap: 25px;
 
@@ -659,15 +622,6 @@ h2 em {
 
   align-items: start;
 
-  transition:
-    padding 0.35s,
-    background 0.35s;
-}
-
-.timeline-item:hover {
-  padding-left: 18px;
-
-  background: linear-gradient(90deg, rgba(157, 78, 221, 0.09), transparent);
 }
 
 .timeline-year {
@@ -692,24 +646,6 @@ h2 em {
   font-size: 0.9rem;
 
   color: var(--muted);
-}
-
-.timeline-item::after {
-  content: "↗";
-
-  font-size: 1rem;
-
-  color: var(--muted);
-
-  transition:
-    transform 0.3s,
-    color 0.3s;
-}
-
-.timeline-item:hover::after {
-  transform: translate(5px, -5px);
-
-  color: var(--mauve);
 }
 
 /* ========================================
@@ -1586,8 +1522,6 @@ footer {
 
   padding: 28px 5%;
 
-  border-top: 1px solid var(--border);
-
   font: 600 0.75rem/1.4 var(--sans);
 
   color: var(--muted);
@@ -1856,10 +1790,6 @@ footer {
        Seções
     ---------------------------------------- */
 
-  .section-divider {
-    width: 88%;
-  }
-
   section {
     width: 88%;
 
@@ -1895,10 +1825,6 @@ footer {
       1fr;
 
     gap: 15px;
-  }
-
-  .timeline-item::after {
-    display: none;
   }
 
   /* ----------------------------------------
@@ -2204,15 +2130,6 @@ footer {
    TRANSIÇÃO ENTRE SEÇÕES
 ======================================== */
 
-.page-curtain {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  transform: translateY(100%);
-  background: linear-gradient(160deg, var(--indigo-velvet), var(--dark-amethyst-2));
-}
-
 /* ========================================
    PROTÓTIPOS
 ======================================== */
@@ -2385,6 +2302,86 @@ h2 em {
   .depth { animation: none; }
 
   .word-track { animation: none; }
+}
 
-  .page-curtain { display: none; }
+/* ========================================
+   AJUSTES: HERO COMPACTO, SOBRE, TÍTULOS, ABAS
+======================================== */
+
+:root { --strip-h: 84px; } /* altura aproximada da .word-strip */
+
+/* Hero: nome + infos + word strip cabem na primeira tela */
+.header {
+  min-height: calc(100svh - var(--strip-h));
+  padding: 84px 5% 28px;
+}
+.hero-stage { flex: 1 1 auto; min-height: 0; }
+.hero-name-line { font-size: clamp(2.75rem, min(10vw, 17vh), 7rem); }
+.hero-footer { padding-top: 12px; }
+
+@media (max-width: 760px) {
+  .header { padding: 76px 6% 24px; }
+  .hero-name-line { font-size: clamp(2.75rem, min(18vw, 14vh), 5rem); }
+}
+
+/* Sobre: título e texto agrupados e centralizados */
+.sobre {
+  grid-template-columns: auto minmax(0, 620px);
+  justify-content: center;
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+@media (max-width: 900px) {
+  .sobre { grid-template-columns: 1fr; justify-content: stretch; gap: 35px; }
+}
+
+/* Títulos de seção menores */
+h2,
+.sobre-left h2 { font-size: clamp(1.75rem, 3.2vw, 2.6rem); }
+.formacao h2 { margin-bottom: 40px; }
+
+/* Abas de Projetos (reaproveita .tabs / .tab-btn de Habilidades) */
+.habilidades-inner,
+.projetos-inner { margin-top: 40px; }
+.projetos-inner .proto-track { margin-top: 0; }
+
+/* ========================================
+   AJUSTES 2: SOBRE PROPORCIONAL, SEM LABELS
+======================================== */
+
+.sobre { align-items: start; }
+.sobre-left h2 { font-size: clamp(2.25rem, 4.2vw, 3.4rem); }
+.sobre-right { max-width: 560px; }
+.sobre-p { font-size: clamp(1rem, 1.3vw, 1.1rem); }
+
+.section-heading-row h2,
+.contact-copy h2 { margin-top: 0; }
+.section-heading-row { align-items: center; }
+
+/* ========================================
+   AJUSTES 3: ESPAÇAMENTO ENTRE SEÇÕES, SOBRE CENTRALIZADO, CONTATO
+======================================== */
+
+section { padding: 80px 0; }
+.contato { padding-top: 80px; padding-bottom: 60px; }
+.sobre { align-items: center; }
+.contact-copy h2 em { letter-spacing: -0.03em; }
+
+@media (max-width: 760px) {
+  section { padding: 56px 0; }
+  .contato { padding-top: 56px; padding-bottom: 48px; }
+}
+
+/* ========================================
+   AJUSTES 4: TÍTULOS EM PLUS JAKARTA SANS (Formação, Habilidades, Projetos)
+   Sobre e Contato mantêm o destaque em Royal Delight
+======================================== */
+
+.formacao h2 em,
+.habilidades h2 em,
+.projetos h2 em {
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
 }
