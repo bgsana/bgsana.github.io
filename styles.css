@@ -801,8 +801,6 @@ h2 em {
 }
 
 .skill-icon-card:hover {
-  transform: translateY(-8px) rotate(-1deg);
-
   background: linear-gradient(
     145deg,
     rgba(157, 78, 221, 0.16),
@@ -916,8 +914,6 @@ h2 em {
 .projetos {
   width: min(1500px, 90%);
 }
-
-/* Cabeçalho */
 
 .section-heading-row {
   display: grid;
@@ -1599,8 +1595,6 @@ footer {
     right: 1%;
   }
 
-  /* Projetos */
-
   .projetos-box {
     grid-template-columns:
       1fr
@@ -1639,8 +1633,6 @@ footer {
     grid-row: 3;
   }
 
-  /* Contato */
-
   .contact-shell {
     padding: 50px;
   }
@@ -1654,10 +1646,6 @@ footer {
   body {
     cursor: auto;
   }
-
-  /* ----------------------------------------
-       Navegação
-    ---------------------------------------- */
 
   .navegation {
     grid-template-columns:
@@ -1699,10 +1687,6 @@ footer {
   .menu-trigger {
     display: block;
   }
-
-  /* ----------------------------------------
-       Hero
-    ---------------------------------------- */
 
   .header {
     padding: 90px 6% 40px;
@@ -1758,10 +1742,6 @@ footer {
     right: 0;
   }
 
-  /* ----------------------------------------
-       Hero Footer
-    ---------------------------------------- */
-
   .hero-footer {
     grid-template-columns: 1fr;
 
@@ -1786,19 +1766,11 @@ footer {
     bottom: 16px;
   }
 
-  /* ----------------------------------------
-       Seções
-    ---------------------------------------- */
-
   section {
     width: 88%;
 
     padding: 90px 0;
   }
-
-  /* ----------------------------------------
-       Sobre
-    ---------------------------------------- */
 
   .sobre,
   .section-heading-row {
@@ -1810,10 +1782,6 @@ footer {
   .sobre-left h2 {
     font-size: clamp(3rem, 16vw, 5rem);
   }
-
-  /* ----------------------------------------
-       Formação
-    ---------------------------------------- */
 
   .formacao h2 {
     margin-bottom: 45px;
@@ -1827,17 +1795,9 @@ footer {
     gap: 15px;
   }
 
-  /* ----------------------------------------
-       Habilidades
-    ---------------------------------------- */
-
   .soft-grid {
     grid-template-columns: 1fr;
   }
-
-  /* ----------------------------------------
-       Projetos
-    ---------------------------------------- */
 
   .projetos-box {
     grid-template-columns: 1fr;
@@ -1867,10 +1827,6 @@ footer {
   .project-cta {
     display: block;
   }
-
-  /* ----------------------------------------
-       Contato
-    ---------------------------------------- */
 
   .contact-shell {
     grid-template-columns: 1fr;
@@ -1926,7 +1882,7 @@ footer {
 }
 
 /* ========================================
-   HERO 3D (letras com profundidade + hover)
+   HERO 3D
 ======================================== */
 
 .hero-stage { perspective: 1400px; }
@@ -2127,10 +2083,6 @@ footer {
 }
 
 /* ========================================
-   TRANSIÇÃO ENTRE SEÇÕES
-======================================== */
-
-/* ========================================
    PROTÓTIPOS
 ======================================== */
 
@@ -2193,7 +2145,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Foco visível para navegação por teclado */
 a:focus-visible,
 button:focus-visible {
   outline: 1px solid var(--mauve);
@@ -2214,7 +2165,6 @@ button:focus-visible {
 h2,
 h3 { text-wrap: balance; }
 
-/* Royal Delight só tem letras minúsculas sem acento: uso restrito ao nome e a destaques curtos */
 .hero-mega {
   letter-spacing: 0.01em;
   line-height: 0.95;
@@ -2244,7 +2194,6 @@ h2 em {
 .section-intro,
 .contact-copy > p { font-size: 1rem; }
 
-/* Áreas de toque de pelo menos 44px (Lei de Fitts / WCAG 2.5.5) */
 .menu a { padding: 10px 0; }
 .menu a::after { bottom: 4px; }
 .social-links a { width: 44px; height: 44px; }
@@ -2267,7 +2216,6 @@ h2 em {
   .menu a { padding: 12px 0; font-size: 0.85rem; }
 }
 
-/* Em telas touch não existe hover: descrição e link dos projetos ficam sempre visíveis */
 @media (hover: none) {
   .projetos-details {
     max-height: none;
@@ -2308,9 +2256,8 @@ h2 em {
    AJUSTES: HERO COMPACTO, SOBRE, TÍTULOS, ABAS
 ======================================== */
 
-:root { --strip-h: 84px; } /* altura aproximada da .word-strip */
+:root { --strip-h: 84px; }
 
-/* Hero: nome + infos + word strip cabem na primeira tela */
 .header {
   min-height: calc(100svh - var(--strip-h));
   padding: 84px 5% 28px;
@@ -2324,7 +2271,6 @@ h2 em {
   .hero-name-line { font-size: clamp(2.75rem, min(18vw, 14vh), 5rem); }
 }
 
-/* Sobre: título e texto agrupados e centralizados */
 .sobre {
   grid-template-columns: auto minmax(0, 620px);
   justify-content: center;
@@ -2334,12 +2280,10 @@ h2 em {
   .sobre { grid-template-columns: 1fr; justify-content: stretch; gap: 35px; }
 }
 
-/* Títulos de seção menores */
 h2,
 .sobre-left h2 { font-size: clamp(1.75rem, 3.2vw, 2.6rem); }
 .formacao h2 { margin-bottom: 40px; }
 
-/* Abas de Projetos (reaproveita .tabs / .tab-btn de Habilidades) */
 .habilidades-inner,
 .projetos-inner { margin-top: 40px; }
 .projetos-inner .proto-track { margin-top: 0; }
@@ -2372,8 +2316,7 @@ section { padding: 80px 0; }
 }
 
 /* ========================================
-   AJUSTES 4: TÍTULOS EM PLUS JAKARTA SANS (Formação, Habilidades, Projetos)
-   Sobre e Contato mantêm o destaque em Royal Delight
+   AJUSTES 4: TÍTULOS EM PLUS JAKARTA SANS 
 ======================================== */
 
 .formacao h2 em,
